@@ -1,20 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:video_resource_go_router_nested_navigation/nested_navigation_app.dart';
+import 'package:video_resource_go_router_nested_navigation/nested_navigation_router.dart';
 
 void main() {
-  runApp(const MainApp());
-}
+  final router = NestedNavigationRouter(routes: statelessNestedRoutes);
 
-class MainApp extends StatelessWidget {
-  const MainApp({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return const MaterialApp(
-      home: Scaffold(
-        body: Center(
-          child: Text('Hello World!'),
-        ),
-      ),
-    );
-  }
+  runApp(NestedNavigationApp(router: router));
 }
